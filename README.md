@@ -1,6 +1,6 @@
 test-ipwb
 ---
-A demo project to simulate how [IPWB](https://github.com/oduwsdl/ipwb) (InterPlanetary Wayback) handles encryption in CDXJ metadata — focusing on legacy `XOR` and current `AES` encryption support.
+A demo project to simulate how [IPWB](https://github.com/oduwsdl/ipwb) (InterPlanetary Wayback) handles encryption in CDXJ metadata focusing on legacy `XOR` and current `AES` encryption support.
 
 Why This Project?
 ---
@@ -55,7 +55,7 @@ How to Run the Project
 Step 1: Clone or Download
 Open a terminal or VS Code and navigate to your working folder:
 ```bash
-git clone https://github.com/your-repo/test-ipwb.git
+git clone https://github.com/Hitendrasinh99/test-ipwb.git
 cd test-ipwb
 ```
 ---
