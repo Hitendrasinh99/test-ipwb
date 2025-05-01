@@ -17,11 +17,11 @@ This directly relates to the IPWB GitHub issue [#448](https://github.com/oduwsdl
 
 Purpose
 ---
--Demonstrate encryption/decryption of CDXJ entries  
--Read and validate encryption method from CDXJ metadata  
--Avoid crashing when unsupported encryption types are used  
--Show how `AES` and `XOR` differ in handling  
--Help future-proof IPWB by simulating legacy compatibility
+- Demonstrate encryption/decryption of CDXJ entries  
+- Read and validate encryption method from CDXJ metadata  
+- Avoid crashing when unsupported encryption types are used  
+- Show how `AES` and `XOR` differ in handling  
+- Help future-proof IPWB by simulating legacy compatibility
 
 How It Works
 ---
@@ -40,16 +40,15 @@ Stores:
 
 > `decrypt.py`
 - Loads `metadata.cdxj`
-- For each record:
-  - Detects encryption type
-  - If `AES`, asks for AES base64 key and decrypts
-  - If `XOR`, asks for XOR key string and decrypts
-  - If anything else → shows a clean error
+- For each record Detects encryption type
+- If `AES`, asks for AES base64 key and decrypts
+- If `XOR`, asks for XOR key string and decrypts
+- If anything else → shows a clean error
 
 > `utils.py`
 - Reusable helper functions:
-  - `xor_decrypt()` — Manual XOR decryption logic
-  - `parse_cdxj()` — Reads CDXJ file and returns metadata records
+- `xor_decrypt()` — Manual XOR decryption logic
+- `parse_cdxj()` — Reads CDXJ file and returns metadata records
 
 How to Run the Project
 ---
@@ -59,6 +58,7 @@ Open a terminal or VS Code and navigate to your working folder:
 git clone https://github.com/your-repo/test-ipwb.git
 cd test-ipwb
 ```
+---
 Step 2: Install Dependencies
 ```bash
 pip install -r requirements.txt
@@ -77,14 +77,12 @@ python decrypt.py
 ```
 
 Why is this needed?
-
+---
 In real IPWB environments:
 - Older `.cdxj` files might still declare `"encryption": "XOR"`
 - IPWB now defaults to AES, which can't decrypt XOR properly
 - If we don’t check the encryption method first, replay will fail
-
 Main logic in `decrypt.py`
-
 ```python
 if method == "AES":
     cipher = AES.new(key, AES.MODE_CBC, iv)
